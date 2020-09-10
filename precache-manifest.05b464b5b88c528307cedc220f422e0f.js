@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "03894222b4624026c0b753aaf6722255",
+    "revision": "28d3d0811adcdc2057c94ea66587c7f8",
     "url": "/movierunner/index.html"
   },
   {
-    "revision": "360553483545ffa8b17b",
-    "url": "/movierunner/static/css/main.4b5efde9.chunk.css"
+    "revision": "4151246cda1cb50b3f4d",
+    "url": "/movierunner/static/css/main.0d309b13.chunk.css"
   },
   {
     "revision": "b50e7044a82092bfbc71",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movierunner/static/js/2.7a50d283.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "360553483545ffa8b17b",
+    "revision": "4151246cda1cb50b3f4d",
     "url": "/movierunner/static/js/main.a65aadfc.chunk.js"
   },
   {
