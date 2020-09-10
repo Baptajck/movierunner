@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Baptajck/LikemovieV2/precache-manifest.9eb450ba7dd340d6d6665b152d5f2317.js"
+  "/Baptajck/LikemovieV2/precache-manifest.caba0d6fe72f7baabadd1cc766949389.js"
 );
 
 self.addEventListener('message', (event) => {
