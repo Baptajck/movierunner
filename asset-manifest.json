@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Baptajck/LikemovieV2/static/css/main.f8d52e19.chunk.css",
+    "main.js": "/Baptajck/LikemovieV2/static/js/main.425760db.chunk.js",
+    "main.js.map": "/Baptajck/LikemovieV2/static/js/main.425760db.chunk.js.map",
+    "runtime-main.js": "/Baptajck/LikemovieV2/static/js/runtime-main.ff77a595.js",
+    "runtime-main.js.map": "/Baptajck/LikemovieV2/static/js/runtime-main.ff77a595.js.map",
+    "static/js/2.cf95977f.chunk.js": "/Baptajck/LikemovieV2/static/js/2.cf95977f.chunk.js",
+    "static/js/2.cf95977f.chunk.js.map": "/Baptajck/LikemovieV2/static/js/2.cf95977f.chunk.js.map",
+    "index.html": "/Baptajck/LikemovieV2/index.html",
+    "precache-manifest.b1e6c6682558a205d130b69dfab655fa.js": "/Baptajck/LikemovieV2/precache-manifest.b1e6c6682558a205d130b69dfab655fa.js",
+    "service-worker.js": "/Baptajck/LikemovieV2/service-worker.js",
+    "static/css/main.f8d52e19.chunk.css.map": "/Baptajck/LikemovieV2/static/css/main.f8d52e19.chunk.css.map",
+    "static/js/2.cf95977f.chunk.js.LICENSE.txt": "/Baptajck/LikemovieV2/static/js/2.cf95977f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff77a595.js",
+    "static/js/2.cf95977f.chunk.js",
+    "static/css/main.f8d52e19.chunk.css",
+    "static/js/main.425760db.chunk.js"
+  ]
+}
