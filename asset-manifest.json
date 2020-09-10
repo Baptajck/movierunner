@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Baptajck/movie/tree/gh-pages/static/css/main.f8d52e19.chunk.css",
-    "main.js": "/Baptajck/movie/tree/gh-pages/static/js/main.03b90769.chunk.js",
-    "main.js.map": "/Baptajck/movie/tree/gh-pages/static/js/main.03b90769.chunk.js.map",
-    "runtime-main.js": "/Baptajck/movie/tree/gh-pages/static/js/runtime-main.9cba2f6b.js",
-    "runtime-main.js.map": "/Baptajck/movie/tree/gh-pages/static/js/runtime-main.9cba2f6b.js.map",
-    "static/js/2.000d9e31.chunk.js": "/Baptajck/movie/tree/gh-pages/static/js/2.000d9e31.chunk.js",
-    "static/js/2.000d9e31.chunk.js.map": "/Baptajck/movie/tree/gh-pages/static/js/2.000d9e31.chunk.js.map",
-    "index.html": "/Baptajck/movie/tree/gh-pages/index.html",
-    "precache-manifest.65f62ed4abc1f362d400210c04e18f10.js": "/Baptajck/movie/tree/gh-pages/precache-manifest.65f62ed4abc1f362d400210c04e18f10.js",
-    "service-worker.js": "/Baptajck/movie/tree/gh-pages/service-worker.js",
-    "static/css/main.f8d52e19.chunk.css.map": "/Baptajck/movie/tree/gh-pages/static/css/main.f8d52e19.chunk.css.map",
-    "static/js/2.000d9e31.chunk.js.LICENSE.txt": "/Baptajck/movie/tree/gh-pages/static/js/2.000d9e31.chunk.js.LICENSE.txt"
+    "main.css": "/movie/static/css/main.f8d52e19.chunk.css",
+    "main.js": "/movie/static/js/main.a92c3a12.chunk.js",
+    "main.js.map": "/movie/static/js/main.a92c3a12.chunk.js.map",
+    "runtime-main.js": "/movie/static/js/runtime-main.2bc06d1f.js",
+    "runtime-main.js.map": "/movie/static/js/runtime-main.2bc06d1f.js.map",
+    "static/js/2.000d9e31.chunk.js": "/movie/static/js/2.000d9e31.chunk.js",
+    "static/js/2.000d9e31.chunk.js.map": "/movie/static/js/2.000d9e31.chunk.js.map",
+    "index.html": "/movie/index.html",
+    "precache-manifest.7d453b608e1850518eb866f0cdee14d6.js": "/movie/precache-manifest.7d453b608e1850518eb866f0cdee14d6.js",
+    "service-worker.js": "/movie/service-worker.js",
+    "static/css/main.f8d52e19.chunk.css.map": "/movie/static/css/main.f8d52e19.chunk.css.map",
+    "static/js/2.000d9e31.chunk.js.LICENSE.txt": "/movie/static/js/2.000d9e31.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9cba2f6b.js",
+    "static/js/runtime-main.2bc06d1f.js",
     "static/js/2.000d9e31.chunk.js",
     "static/css/main.f8d52e19.chunk.css",
-    "static/js/main.03b90769.chunk.js"
+    "static/js/main.a92c3a12.chunk.js"
   ]
 }
