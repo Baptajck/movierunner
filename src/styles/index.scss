@@ -1,4 +1,5 @@
 @import './flexbox';
+@import './vars';
 
 body {
   margin: 0;
@@ -7,9 +8,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // &:-moz-selection {
+  //   background-color: $color-green;
+  //   color: $color-blueDragee;
+  // }
+  // &:selection { 
+  //   background-color: $color-green;
+  //   color: $color-blueDragee;
+  // }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}

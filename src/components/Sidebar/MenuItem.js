@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const MenuItem = ({ active, icon, title, setExpanded, setselectedItem }) => {
+const MenuItem = ({ active, icon, title, setExpanded, setselectedItem, route }) => {
   const onItemClicked = (event) => {
     setExpanded(false);
     return setselectedItem(event.target.textContent);
@@ -9,13 +10,12 @@ const MenuItem = ({ active, icon, title, setExpanded, setselectedItem }) => {
 
   const Icon = icon;
 
-  console.log(active, title);
   return (
-    <div className={`menuItem ${active && 'menuItem-activeContainer'}`} onClick={onItemClicked}>
+    <NavLink to={route} className={`menuItem ${active && 'menuItem-activeContainer'}`} onClick={onItemClicked}>
       {active && <div className="menuItem-activeBar"></div>}
       <Icon fill={active ? '#dde2ff' : ''} opacity={!active ? '0.4' : '1'} />
       <span className={`menuItem-title ${active && 'menuItem-activeTitle'}`}>{title}</span>
-    </div>
+    </NavLink>
   )
 }
 
