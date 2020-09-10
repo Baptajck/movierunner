@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/movierunner/static/css/main.2897f931.chunk.css",
-    "main.js": "/movierunner/static/js/main.0b4aa70e.chunk.js",
-    "main.js.map": "/movierunner/static/js/main.0b4aa70e.chunk.js.map",
+    "main.css": "/movierunner/static/css/main.235424cc.chunk.css",
+    "main.js": "/movierunner/static/js/main.9e076669.chunk.js",
+    "main.js.map": "/movierunner/static/js/main.9e076669.chunk.js.map",
     "runtime-main.js": "/movierunner/static/js/runtime-main.4192a6f7.js",
     "runtime-main.js.map": "/movierunner/static/js/runtime-main.4192a6f7.js.map",
-    "static/js/2.c093c020.chunk.js": "/movierunner/static/js/2.c093c020.chunk.js",
-    "static/js/2.c093c020.chunk.js.map": "/movierunner/static/js/2.c093c020.chunk.js.map",
+    "static/js/2.907d28b1.chunk.js": "/movierunner/static/js/2.907d28b1.chunk.js",
+    "static/js/2.907d28b1.chunk.js.map": "/movierunner/static/js/2.907d28b1.chunk.js.map",
     "index.html": "/movierunner/index.html",
-    "precache-manifest.4097db37be1797920912b92e16a79fc0.js": "/movierunner/precache-manifest.4097db37be1797920912b92e16a79fc0.js",
+    "precache-manifest.e7dc2f8eec4f2974f72f33d8c4f72b8f.js": "/movierunner/precache-manifest.e7dc2f8eec4f2974f72f33d8c4f72b8f.js",
     "service-worker.js": "/movierunner/service-worker.js",
-    "static/css/main.2897f931.chunk.css.map": "/movierunner/static/css/main.2897f931.chunk.css.map",
-    "static/js/2.c093c020.chunk.js.LICENSE.txt": "/movierunner/static/js/2.c093c020.chunk.js.LICENSE.txt"
+    "static/css/main.235424cc.chunk.css.map": "/movierunner/static/css/main.235424cc.chunk.css.map",
+    "static/js/2.907d28b1.chunk.js.LICENSE.txt": "/movierunner/static/js/2.907d28b1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4192a6f7.js",
-    "static/js/2.c093c020.chunk.js",
-    "static/css/main.2897f931.chunk.css",
-    "static/js/main.0b4aa70e.chunk.js"
+    "static/js/2.907d28b1.chunk.js",
+    "static/css/main.235424cc.chunk.css",
+    "static/js/main.9e076669.chunk.js"
   ]
 }
