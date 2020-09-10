@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/movierunner/static/css/main.719dc561.chunk.css",
+    "main.css": "/movierunner/static/css/main.c388ff2e.chunk.css",
     "main.js": "/movierunner/static/js/main.e990fb1d.chunk.js",
     "main.js.map": "/movierunner/static/js/main.e990fb1d.chunk.js.map",
     "runtime-main.js": "/movierunner/static/js/runtime-main.4192a6f7.js",
@@ -8,15 +8,15 @@
     "static/js/2.56e06543.chunk.js": "/movierunner/static/js/2.56e06543.chunk.js",
     "static/js/2.56e06543.chunk.js.map": "/movierunner/static/js/2.56e06543.chunk.js.map",
     "index.html": "/movierunner/index.html",
-    "precache-manifest.d6c9f9aa4c1fa3104cfee2618e887b12.js": "/movierunner/precache-manifest.d6c9f9aa4c1fa3104cfee2618e887b12.js",
+    "precache-manifest.4ab6658744393f59e34ff0a50047d655.js": "/movierunner/precache-manifest.4ab6658744393f59e34ff0a50047d655.js",
     "service-worker.js": "/movierunner/service-worker.js",
-    "static/css/main.719dc561.chunk.css.map": "/movierunner/static/css/main.719dc561.chunk.css.map",
+    "static/css/main.c388ff2e.chunk.css.map": "/movierunner/static/css/main.c388ff2e.chunk.css.map",
     "static/js/2.56e06543.chunk.js.LICENSE.txt": "/movierunner/static/js/2.56e06543.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4192a6f7.js",
     "static/js/2.56e06543.chunk.js",
-    "static/css/main.719dc561.chunk.css",
+    "static/css/main.c388ff2e.chunk.css",
     "static/js/main.e990fb1d.chunk.js"
   ]
 }
