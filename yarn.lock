@@ -8962,6 +8962,11 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-collapsible-content@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-collapsible-content/-/react-collapsible-content-1.0.0.tgz#58e36cda78ae1e1d085acb3461b4f3e1bfd47ae9"
+  integrity sha512-WnTbWkSQpPtbOZQ1vnOXY0kSMJfcZNT1dmx1Wn2TyOOhOeuhsmFo8mEKiAzheyscKFpoRyRX17jpHmYWi44y8w==
+
 react-dev-utils@^10.2.1:
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-10.2.1.tgz#f6de325ae25fa4d546d09df4bb1befdc6dd19c19"
