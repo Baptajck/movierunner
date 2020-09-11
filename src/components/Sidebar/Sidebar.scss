@@ -45,7 +45,7 @@
   }
 
   &-mainContainer {
-    transition: left 0.35s, right 0.35s;
+    transition: left .05s, right 0s;
     position: fixed;
     width: 255;
     height: calc(100% - 32px);
@@ -53,7 +53,7 @@
   }
 
   &-container {
-    transition: left 0.35s, right 0.35s;
+    transition: left 0.35s, right 0s;
     position: absolute;
     width: 255;
     height: calc(100% - 32px);
@@ -66,7 +66,7 @@
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.3) none repeat scroll 0% 0%;
-    transition: all .35s ease 0s;
+    transition: all .05s ease 0s;
     transform: translate3d(-100%, 0px, 0px);
   }
 

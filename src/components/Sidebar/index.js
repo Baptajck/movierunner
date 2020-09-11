@@ -18,14 +18,10 @@ const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
 
   const {
-    isOpen,
     isExpanded,
     isActive,
     onMenuItemClicked,
-    setIsOpen
   } = useSidebar({ defaultPath: '/' });
-
-  // const [selectedItem, setselectedItem] = useState('Accueil');
 
   const isMobile = () => window.innerWidth <= 768;
 
@@ -57,14 +53,21 @@ const Sidebar = () => {
               route="/"
               icon={FaHome}
               active={isActive('/')}
-              onClick={() => onMenuItemClicked('/')}
+              onClick={() => {
+                {isMobile() && toggleMenu()};
+                onMenuItemClicked('/');
+              }}
+              toggleMenu={toggleMenu}
             />
             <MenuItem
               title="Rechercher"
               route="/search"
               icon={FaSearch}
               active={isActive('/search')}
-              onClick={() => onMenuItemClicked('/search')}
+              onClick={() => {
+                {isMobile() && toggleMenu()};
+                onMenuItemClicked('/search');
+              }} 
             />
             <MenuItem
               title="Films"
@@ -78,14 +81,20 @@ const Sidebar = () => {
                   title: 'A l\'affiche',
                   route: '/movies/pellicule',
                   icon: <FiPlayCircle width={20} fill={'#DDE2FF'} />,
-                  onClick: () => onMenuItemClicked('/movies/pellicule'),
+                  onClick: () => {
+                    {isMobile() && toggleMenu()};
+                    onMenuItemClicked('/movies/pellicule');
+                  },
                   active: isActive('/movies/pellicule')
                 },
                 {
                   title: 'A venir',
                   route: '/movies/upcoming',
                   icon: <FiPlayCircle width={16} fill={'#DDE2FF'} />,
-                  onClick: () => onMenuItemClicked('/movies/upcoming'),
+                  onClick: () => {
+                    {isMobile() && toggleMenu()};
+                    onMenuItemClicked('/movies/upcoming');
+                  },
                   active: isActive('/movies/upcoming')
                 },
               ]}
@@ -101,14 +110,20 @@ const Sidebar = () => {
                   title: 'Populaire',
                   route: '/shows/popular',
                   icon: <FiPlayCircle width={20} fill={'#DDE2FF'} />,
-                  onClick: () => onMenuItemClicked('/shows/popular'),
+                  onClick: () => {
+                    {isMobile() && toggleMenu()};
+                    onMenuItemClicked('/shows/popular');
+                  },
                   active: isActive('/shows/popular')
                 },
                 {
                   title: 'A venir',
                   route: '/shows/upcoming',
                   icon: <FiPlayCircle width={16} fill={'#DDE2FF'} />,
-                  onClick: () => onMenuItemClicked('/shows/upcoming'),
+                  onClick: () => {
+                    {isMobile() && toggleMenu()};
+                    onMenuItemClicked('/shows/upcoming');
+                  },
                   active: isActive('/shows/upcoming')
                 },
               ]}
@@ -118,7 +133,10 @@ const Sidebar = () => {
               route="/developer"
               icon={BsPeopleCircle}
               active={isActive('/developer')}
-              onClick={() => onMenuItemClicked('/developer')}
+              onClick={() => {
+                {isMobile() && toggleMenu()};
+                onMenuItemClicked('/developer');
+              }}
             />
           </div>
         </div>
