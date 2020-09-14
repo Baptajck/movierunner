@@ -11,6 +11,7 @@ import { CgScreen } from 'react-icons/cg';
 import MenuItem from './MenuItem';
 import LogoSidebar from './LogoSidebar';
 import logoHeadBand from './logo-headband.png';
+import DarkMode from '../DarkMode'
 
 import useSidebar from './useSidebar';
 
@@ -33,6 +34,8 @@ const Sidebar = () => {
     </div>
   }
 
+  const toggleClick = () => isMobile() && toggleMenu();
+
   return (
     <div className="sidebar">
       <div className="sidebar-headband">
@@ -54,7 +57,7 @@ const Sidebar = () => {
               icon={FaHome}
               active={isActive('/')}
               onClick={() => {
-                {isMobile() && toggleMenu()};
+                toggleClick();
                 onMenuItemClicked('/');
               }}
               toggleMenu={toggleMenu}
@@ -65,7 +68,7 @@ const Sidebar = () => {
               icon={FaSearch}
               active={isActive('/search')}
               onClick={() => {
-                {isMobile() && toggleMenu()};
+                toggleClick();
                 onMenuItemClicked('/search');
               }} 
             />
@@ -79,20 +82,20 @@ const Sidebar = () => {
               subItems={[
                 {
                   title: 'A l\'affiche',
-                  route: '/movies/pellicule',
+                  route: '/movies/poster',
                   icon: <FiPlayCircle width={20} fill={'#DDE2FF'} />,
                   onClick: () => {
-                    {isMobile() && toggleMenu()};
-                    onMenuItemClicked('/movies/pellicule');
+                    toggleClick();
+                    onMenuItemClicked('/movies/poster');
                   },
-                  active: isActive('/movies/pellicule')
+                  active: isActive('/movies/poster')
                 },
                 {
                   title: 'A venir',
                   route: '/movies/upcoming',
                   icon: <FiPlayCircle width={16} fill={'#DDE2FF'} />,
                   onClick: () => {
-                    {isMobile() && toggleMenu()};
+                    toggleClick();
                     onMenuItemClicked('/movies/upcoming');
                   },
                   active: isActive('/movies/upcoming')
@@ -107,24 +110,14 @@ const Sidebar = () => {
               onClick={() => onMenuItemClicked('/shows', { isCollapsible: true })}
               subItems={[
                 {
-                  title: 'Populaire',
+                  title: 'Populaires',
                   route: '/shows/popular',
                   icon: <FiPlayCircle width={20} fill={'#DDE2FF'} />,
                   onClick: () => {
-                    {isMobile() && toggleMenu()};
+                    toggleClick();
                     onMenuItemClicked('/shows/popular');
                   },
                   active: isActive('/shows/popular')
-                },
-                {
-                  title: 'A venir',
-                  route: '/shows/upcoming',
-                  icon: <FiPlayCircle width={16} fill={'#DDE2FF'} />,
-                  onClick: () => {
-                    {isMobile() && toggleMenu()};
-                    onMenuItemClicked('/shows/upcoming');
-                  },
-                  active: isActive('/shows/upcoming')
                 },
               ]}
             />
@@ -134,11 +127,12 @@ const Sidebar = () => {
               icon={BsPeopleCircle}
               active={isActive('/developer')}
               onClick={() => {
-                {isMobile() && toggleMenu()};
+                toggleClick();
                 onMenuItemClicked('/developer');
               }}
             />
           </div>
+          <DarkMode />
         </div>
         {isMobile && expanded && <div className="sidebar-burger-on" onClick={toggleMenu}></div>}
       </div>

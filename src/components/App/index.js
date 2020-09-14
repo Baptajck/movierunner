@@ -9,12 +9,24 @@ import Sidebar from '../Sidebar';
 import Home from '../Home';
 import Search from '../Search';
 import Developer from '../Developer';
+import MoviesPoster from '../MoviesPoster';
+import MoviesUpcoming from '../MoviesUpcoming';
+import ShowsPopular from '../ShowsPopular';
 
 const App = () => {
   return (
     <div>
       <Sidebar />
       <Switch>
+        <Route path="/movies/poster">
+          <MoviesPoster />
+        </Route>
+        <Route path="/movies/upcoming">
+          <MoviesUpcoming />
+        </Route>
+        <Route path="/shows/popular">
+          <ShowsPopular />
+        </Route>
         <Route path="/search">
           <Search />
         </Route>
