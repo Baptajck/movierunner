@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import './ShowsPopular.scss';
 
+import { truncStr } from '../../utils';
+
 const ShowsPopular = () => {
   const [movies, setMovies] = useState([
     { bool: false },
@@ -44,7 +46,7 @@ const ShowsPopular = () => {
         <img className="showsPopular-poster-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt=""/>
         <div className="showsPopular-poster-info">
           <h2 className="showsPopular-poster-title">{name}</h2>
-          <p className="showsPopular-poster-overview">{overview}</p>
+          <p className="showsPopular-poster-overview">{truncStr(String(overview), 250)}</p>
         </div>
       </div>
       <div className="showsPopular-movies">

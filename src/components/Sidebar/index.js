@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './Sidebar.scss';
 import { NavLink } from 'react-router-dom';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { GiHamburgerMenu, GiPlayButton } from 'react-icons/gi';
 import { BsPeopleCircle } from 'react-icons/bs'
 import { FaHome, FaSearch } from 'react-icons/fa';
-import { FiPlayCircle } from 'react-icons/fi';
 import { RiMovie2Fill } from 'react-icons/ri';
-import { CgScreen } from 'react-icons/cg';
+import { BiSlideshow } from 'react-icons/bi';
 
 import MenuItem from './MenuItem';
 import LogoSidebar from './LogoSidebar';
@@ -40,9 +39,10 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebar-headband">
         <div className="sidebar-headband-container">
-          {(isMobile() && !expanded) && renderBurger()}
+          {/* (isMobile() && !expanded) && renderBurger() */}
+          {renderBurger()}
           <NavLink to="/">
-            <img className="sidebar-headband-logo" src={logoHeadBand} alt="Logo Headband"/>
+            {(isMobile() && !expanded) && <img className="sidebar-headband-logo" src={logoHeadBand} alt="Logo Headband"/>}
           </NavLink>
           <NavLink to="/search" className="sidebar-headband-search"><FaSearch /></NavLink>
         </div>
@@ -83,7 +83,7 @@ const Sidebar = () => {
                 {
                   title: 'A l\'affiche',
                   route: '/movies/poster',
-                  icon: <FiPlayCircle width={20} fill={'#DDE2FF'} />,
+                  icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
                   onClick: () => {
                     toggleClick();
                     onMenuItemClicked('/movies/poster');
@@ -93,7 +93,7 @@ const Sidebar = () => {
                 {
                   title: 'A venir',
                   route: '/movies/upcoming',
-                  icon: <FiPlayCircle width={16} fill={'#DDE2FF'} />,
+                  icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
                   onClick: () => {
                     toggleClick();
                     onMenuItemClicked('/movies/upcoming');
@@ -104,7 +104,7 @@ const Sidebar = () => {
             />
             <MenuItem
               title="Séries"
-              icon={CgScreen}
+              icon={BiSlideshow}
               active={isActive('/shows')}
               expanded={isExpanded('/shows')}
               onClick={() => onMenuItemClicked('/shows', { isCollapsible: true })}
@@ -112,7 +112,7 @@ const Sidebar = () => {
                 {
                   title: 'Populaires',
                   route: '/shows/popular',
-                  icon: <FiPlayCircle width={20} fill={'#DDE2FF'} />,
+                  icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
                   onClick: () => {
                     toggleClick();
                     onMenuItemClicked('/shows/popular');

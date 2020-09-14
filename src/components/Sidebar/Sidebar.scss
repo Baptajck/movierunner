@@ -10,9 +10,9 @@
     position: fixed;
     background-color: $color-green;
     height: 50px;
-    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px $boxShadowSidebar;
+    -moz-box-shadow: 0px 0px 5px 0px $boxShadowSidebar;
+    box-shadow: 0px 0px 5px 0px $boxShadowSidebar;
     transition: all .35s ease 0s;
     transform: translate3d(0px, 0px, 0px);
     z-index: 5;
@@ -21,6 +21,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
+      height: 100%;
     }
 
     &-logo {
@@ -82,7 +83,7 @@
   }
 
   &-menuList {
-    margin-top: 52px;
+    margin-top: 40px;
   }
 
   &-burger {
@@ -217,6 +218,10 @@
       right: inherit;
       z-index: 1100;
       width: 255px;
+    }
+
+    &-menuList {
+      margin-top: 0px;
     }
 
     &-hide {

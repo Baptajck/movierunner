@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './DarkMode.scss';
 
+import { FaMoon, FaSun } from 'react-icons/fa';
+
 const DarkMode = () => {
   const [checked, setChecked] = useState(localStorage.getItem("theme") === "dark" ? true : false);
   useEffect(() => {
@@ -24,11 +26,15 @@ const DarkMode = () => {
       setChecked(false);
     }
   }   
-
+  const theme = localStorage.getItem("theme");
+  console.log(theme);
   return(
     <div className="darkMode">
-    <p>Vous êtes en {localStorage.getItem("theme")}</p>
       <label className="darkMode-switch">
+        <div className="darkMode-container-icon">
+          <FaSun className="darkMode-container-icon--sun" />
+          <FaMoon className="darkMode-container-icon--moon"/>
+        </div>
         <input
           type="checkbox"
           defaultChecked={checked}

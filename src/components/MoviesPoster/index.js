@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import './MoviesPoster.scss';
 
+import { truncStr } from '../../utils';
+
 const MoviesPoster = () => {
   const [director, setDirector] = useState([]);
   const [movies, setMovies] = useState([
@@ -63,7 +65,7 @@ const MoviesPoster = () => {
         <div className="moviesPoster-poster-info">
           <h2 className="moviesPoster-poster-title">{title}</h2>
           <p className="moviesPoster-poster-director">De {name}</p>
-          <p className="moviesPoster-poster-overview">{overview}</p>
+          <p className="moviesPoster-poster-overview">{truncStr(String(overview), 250)}</p>
         </div>
       </div>
       <div className="moviesPoster-movies">

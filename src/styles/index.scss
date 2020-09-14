@@ -8,20 +8,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  // &:-moz-selection {
-  //   background-color: $color-green;
-  //   color: $color-blueDragee;
-  // }
-  // &:selection { 
-  //   background-color: $color-green;
-  //   color: $color-blueDragee;
-  // }
 }
 
 html[data-theme="dark"]  {
   color: rgb(250, 250, 250);
-  background-color: rgb(5, 5, 5);
+  background-color:#262626;
   transition: .8s ease;
 }
 

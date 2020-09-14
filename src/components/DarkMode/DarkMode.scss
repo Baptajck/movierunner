@@ -1,8 +1,7 @@
 @import '../../styles/vars.scss';
 
 .darkMode {
-  position: absolute;
-  bottom: 2rem;
+  margin-top: 2.5rem;
 
   &-switch {
     position: relative;
@@ -15,6 +14,25 @@
       opacity: 0;
       width: 0;
       height: 0;
+    }
+  }
+
+  &-container-icon {
+
+    &--sun {
+      margin-left: 7px;
+      position: absolute;
+      z-index: 200;
+      margin-top: 9px;
+      color: yellow;
+    }
+
+    &--moon {
+      margin-left: 35px;
+      position: absolute;
+      z-index: 200;
+      margin-top: 9px;
+      color: #262626;
     }
   }
 
@@ -40,6 +58,7 @@
       border: 1px solid $color-green;
       -webkit-transition: 0.4s;
       transition: 0.4s;
+      z-index: 205;
     }
   }
   & p {
