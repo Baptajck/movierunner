@@ -27,7 +27,6 @@ const DarkMode = () => {
     }
   }   
   const theme = localStorage.getItem("theme");
-  console.log(theme);
   return(
     <div className="darkMode">
       <label className="darkMode-switch">

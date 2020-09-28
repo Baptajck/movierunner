@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,11 +13,13 @@ body {
 html[data-theme="dark"]  {
   color: rgb(250, 250, 250);
   background-color:#262626;
+  $boxShadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: .8s ease;
 }
 
 html[data-theme="light"]  {
   color: rgb(5, 5, 5);
   background-color: rgb(250, 250, 250);
+  $boxShadow: 0px 0px 5px 0px rgba(255,255,255,0.75);
   transition: .8s ease;
 }

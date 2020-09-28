@@ -42,7 +42,8 @@ const Sidebar = () => {
           {/* (isMobile() && !expanded) && renderBurger() */}
           {renderBurger()}
           <NavLink to="/">
-            {(isMobile() && !expanded) && <img className="sidebar-headband-logo" src={logoHeadBand} alt="Logo Headband"/>}
+            {/* (isMobile() && !expanded) && <img className="sidebar-headband-logo" src={logoHeadBand} alt="Logo Headband"/> */}
+            <img className="sidebar-headband-logo" src={logoHeadBand} alt="Logo Headband"/>
           </NavLink>
           <NavLink to="/search" className="sidebar-headband-search"><FaSearch /></NavLink>
         </div>
