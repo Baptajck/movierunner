@@ -1,48 +1,57 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import './MoviesPoster.scss';
+import { NavLink } from 'react-router-dom';
+import CardMovies from '../Home/CardMovies';
+import CardMoviesDesktop from './CardMoviesDesktop';
+import { useWindowSize } from '../../utils';
 
 import { truncStr } from '../../utils';
 
 const MoviesPoster = () => {
-  const [director, setDirector] = useState([]);
-  const [movies, setMovies] = useState([
-    { bool: false },
-    { movies: [] },
-    { poster: {} },
-  ]);
+  const [moviePoster, setMoviePoster] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [movies2, setMovies2] = useState([]);
 
-  const getMovies = () => {
+  /**
+  * FUNCTION permettant de récuperer les id des films à l'affiche
+  * @returns  {array} idMovie
+  */
+  const getIdMovies = () => {
     axios.get('https://api.themoviedb.org/3/movie/now_playing', {
       params: {
         api_key: 'd21d6f9a11307550b8fe09b60f3ee8ef',
         language: 'fr-FR',
         iso_3166_1: 'FR',
         english_name: 'France',
+        page: 1,
       },
     })
     .then((res) => {
-      setMovies([
-        { bool: true },
-        { movies: res.data.results },
-        { poster: res.data.results[0] },
-      ]);
+      setMovies(res.data.results)
     })
     .catch(() => (
       AxiosError
     ));
   };
 
-  const getDirectorPoster = () => {
-    const { id } = movies[2].poster;
-    axios.get(`https://api.themoviedb.org/3/movie/${id}/credits`, {
+  /**
+  * FUNCTION permettant de récuperer les id des films à l'affiche
+  * @returns  {array} idMovie
+  */
+  const getIdMovies2 = () => {
+    axios.get('https://api.themoviedb.org/3/movie/now_playing', {
       params: {
         api_key: 'd21d6f9a11307550b8fe09b60f3ee8ef',
+        language: 'fr-FR',
+        iso_3166_1: 'FR',
+        english_name: 'France',
+        page: 2,
       },
     })
     .then((res) => {
-      const data = res.data.crew.filter((c) => c.job === 'Director')
-      setDirector(data[0])
+      console.log(res.data);
+      setMovies2(res.data.results)
     })
     .catch(() => (
       AxiosError
@@ -50,34 +59,68 @@ const MoviesPoster = () => {
   };
 
   useEffect(() => {
-    getMovies();
-    getDirectorPoster();
-  }, [movies[0].bool]);
+    getIdMovies();
+    getIdMovies2();
+  }, []);
 
-  const { poster_path, title, overview } = movies[2].poster;
-  const { name } = director;
+  const { width } = useWindowSize();
+  const idMovie = [];
+  const idMovie2 = [];
+
+  movies.filter((c) => c.overview !== '')
+  .forEach(movie => {
+    idMovie.push(movie.id)
+  });
+
+  movies2.filter((c) => c.overview !== '')
+  .forEach(movie => {
+    idMovie2.push(movie.id)
+  });
+
+  console.log(idMovie2);
 
   return (
     <div className="moviesPoster">
       <h1 className="moviesPoster-title-movies">Films à l'affiche</h1>
-      <div className="moviesPoster-poster-container">
-        <img className="moviesPoster-poster-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt=""/>
-        <div className="moviesPoster-poster-info">
-          <h2 className="moviesPoster-poster-title">{title}</h2>
-          <p className="moviesPoster-poster-director">De {name}</p>
-          <p className="moviesPoster-poster-overview">{truncStr(String(overview), 250)}</p>
+      <p className="moviesPoster-subtitle-movies">Films actuellement diffusés au cinéma</p>
+      <hr className="moviesPoster-hr"/>
+      {/*
+        <div className="moviesPoster-poster-container" title={title}>
+          <img className="moviesPoster-poster-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
+          <div className="moviesPoster-poster-info">
+            <h2 className="moviesPoster-poster-title">{title}</h2>
+            <p className="moviesPoster-poster-director">De {name}</p>
+            <p className="moviesPoster-poster-overview">{truncStr(String(overview), 250)}</p>
+          </div>
         </div>
-      </div>
-      <div className="moviesPoster-movies">
+      */}
+      <div className="moviesPoster-container-page">
+        <div className="moviesPoster-movies">
+          {
+            idMovie.map((v, i) => (
+              width <= 768 ? (
+                <NavLink key={v} to={`movie/${v}`}>
+                  <CardMovies id={v} />
+                </NavLink>
+              ) : (
+                <NavLink key={v} to={`movie/${v}`} className="moviesPoster-card-desktop-link">
+                  <CardMoviesDesktop id={v} />
+                </NavLink>
+              )
+            ))
+          }
+        </div>
+        <div className="moviesPoster-container-page--2">
         {
-          movies[1].movies.filter((c) => c.title !== '' && c.poster_path !== null)
-          .slice(1, 11)
-          .map(({ poster_path, title }, id) => (
-            <div key={id} className="moviesPoster-container-movie">
-              <img className="moviesPoster-poster" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
-            </div>
+          idMovie2.map((v, i) => (
+            width >= 768 ? (
+              <NavLink key={v} to={`movie/${v}`}>
+                <CardMovies id={v} />
+              </NavLink>
+            ) : ''
           ))
         }
+        </div>
       </div>
     </div>
   );

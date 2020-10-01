@@ -6,7 +6,7 @@
 
   &-desc {
     text-align: justify;
-    margin: 1rem;
+    margin: 0 1rem 2rem;
   }
 
   /* Container Cards */
@@ -17,6 +17,7 @@
     margin: 1rem;
     padding: 1rem;
     border-radius: 5px;
+    margin-bottom: 2rem;
 
     &-title {
       font-size: 22px;
