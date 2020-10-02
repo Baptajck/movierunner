@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import './MoviesUpcoming.scss';
+import { NavLink } from 'react-router-dom';
+import CardMovies from '../../utils/Cards/CardMovies';
+import CardMoviesDesktop from '../../utils/Cards/CardMoviesDesktop';
+import { useWindowSize, truncStr } from '../../utils';
 
-import { truncStr } from '../../utils';
 
 const MoviesUpcoming = () => {
-  const [director, setDirector] = useState([]);
-  const [movies, setMovies] = useState([
-    { bool: false },
-    { movies: [] },
-    { poster: {} },
-  ]);
+  const [moviePoster, setMoviePoster] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [movies2, setMovies2] = useState([]);
 
-  const getMovies = () => {
+  /**
+  * FUNCTION permettant de récuperer les id des films à l'affiche
+  * @returns  {array} idMovie
+  */
+  const getIdMovies = () => {
     axios.get('https://api.themoviedb.org/3/movie/upcoming', {
       params: {
         api_key: 'd21d6f9a11307550b8fe09b60f3ee8ef',
@@ -23,27 +27,29 @@ const MoviesUpcoming = () => {
       },
     })
     .then((res) => {
-      setMovies([
-        { bool: true },
-        { movies: res.data.results },
-        { poster: res.data.results[0] },
-      ]);
+      setMovies(res.data.results)
     })
     .catch(() => (
       AxiosError
     ));
   };
 
-  const getDirectorPoster = () => {
-    const { id } = movies[2].poster;
-    axios.get(`https://api.themoviedb.org/3/movie/${id}/credits`, {
+  /**
+  * FUNCTION permettant de récuperer les id des films à l'affiche
+  * @returns  {array} idMovie
+  */
+  const getIdMovies2 = () => {
+    axios.get('https://api.themoviedb.org/3/movie/upcoming', {
       params: {
         api_key: 'd21d6f9a11307550b8fe09b60f3ee8ef',
+        language: 'fr-FR',
+        iso_3166_1: 'FR',
+        english_name: 'France',
+        page: 2,
       },
     })
     .then((res) => {
-      const data = res.data.crew.filter((c) => c.job === 'Director')
-      setDirector(data[0])
+      setMovies2(res.data.results)
     })
     .catch(() => (
       AxiosError
@@ -51,34 +57,56 @@ const MoviesUpcoming = () => {
   };
 
   useEffect(() => {
-    getMovies();
-    getDirectorPoster();
-  }, [movies[0].bool]);
+    getIdMovies();
+    getIdMovies2();
+  }, []);
 
-  const { poster_path, title, overview } = movies[2].poster;
-  const { name } = director;
+  const { width } = useWindowSize();
+  const idMovie = [];
+  const idMovie2 = [];
+
+  movies.filter((c) => c.overview !== '')
+  .forEach(movie => {
+    idMovie.push(movie.id)
+  });
+
+  movies2.filter((c) => c.overview !== '')
+  .forEach(movie => {
+    idMovie2.push(movie.id)
+  });
 
   return (
-    <div className="moviesUpcoming">
-      <h1 className="moviesUpcoming-title-movies">Films à venir</h1>
-      <div className="moviesUpcoming-poster-container">
-        <img className="moviesUpcoming-poster-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt=""/>
-        <div className="moviesUpcoming-poster-info">
-          <h2 className="moviesUpcoming-poster-title">{title}</h2>
-          <p className="moviesUpcoming-poster-director">De {name}</p>
-          <p className="moviesUpcoming-poster-overview">{truncStr(String(overview), 250)}</p>
+    <div className="moviesPoster">
+      <h1 className="moviesPoster-title-movies">Prochainement en salle</h1>
+      <p className="moviesPoster-subtitle-movies">Films à venir au cinéma</p>
+      <hr className="moviesPoster-hr"/>
+      <div className="moviesPoster-container-page">
+        <div className="moviesPoster-movies">
+          {
+            idMovie.map((v, i) => (
+              width <= 768 ? (
+                <NavLink key={v} to={`movie/${v}`}>
+                  <CardMovies id={v} />
+                </NavLink>
+              ) : (
+                <NavLink key={v} to={`movie/${v}`} className="moviesPoster-card-desktop-link">
+                  <CardMoviesDesktop id={v} />
+                </NavLink>
+              )
+            ))
+          }
         </div>
-      </div>
-      <div className="moviesUpcoming-movies">
+        <div className="moviesPoster-container-page--2">
         {
-          movies[1].movies.filter((c) => c.title !== '' && c.poster_path !== null)
-          .slice(1, 11)
-          .map(({ poster_path, title }, id) => (
-            <div key={id} className="moviesUpcoming-container-movie">
-              <img className="moviesUpcoming-poster" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
-            </div>
+          idMovie2.map((v, i) => (
+            width >= 768 ? (
+              <NavLink key={v} to={`movie/${v}`}>
+                <CardMovies id={v} />
+              </NavLink>
+            ) : ''
           ))
         }
+        </div>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import axios, { AxiosError } from 'axios';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import './Home.scss';
-import CardMovies from './CardMovies';
-import CardTvShows from './CardTvShows';
+import CardMovies from '../../utils/Cards/CardMovies';
+import CardTvShows from '../../utils/Cards/CardTvShows';
 import { useWindowSize } from '../../utils';
 
 const Home = () => {
@@ -120,7 +120,7 @@ const Home = () => {
               )
             })
           }
-          <NavLink to="#" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
+          <NavLink to="/movies/poster" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
         </div>
       </section>
 
@@ -138,7 +138,7 @@ const Home = () => {
               )
             })
           }
-          <NavLink to="#" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
+          <NavLink to="/movies/upcoming" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
         </div>
       </section>
 
@@ -156,7 +156,7 @@ const Home = () => {
               )
             })
           }
-          <NavLink to="#" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
+          <NavLink to="tvshows/popular" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
         </div>
       </section>
 

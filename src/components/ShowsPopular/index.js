@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import './ShowsPopular.scss';
-
-import { truncStr } from '../../utils';
+import { NavLink } from 'react-router-dom';
+import CardTvShows from '../../utils/Cards/CardTvShows';
+import CardTvShowsDesktop from '../../utils/Cards/CardTvShowsDesktop';
+import { useWindowSize, truncStr } from '../../utils';
 
 const ShowsPopular = () => {
-  const [movies, setMovies] = useState([
-    { bool: false },
-    { movies: [] },
-    { poster: {} },
-  ]);
+  const [moviePoster, setMoviePoster] = useState([]);
+  const [TvShows, setTvShows] = useState([]);
+  const [TvShows2, setTvShows2] = useState([]);
 
-  const getMovies = () => {
+  /**
+  * FUNCTION permettant de récuperer les id des films à l'affiche
+  * @returns  {array} idMovie
+  */
+  const getIdTvShows = () => {
     axios.get('https://api.themoviedb.org/3/tv/popular', {
       params: {
         api_key: 'd21d6f9a11307550b8fe09b60f3ee8ef',
@@ -22,11 +26,29 @@ const ShowsPopular = () => {
       },
     })
     .then((res) => {
-      setMovies([
-        { bool: true },
-        { movies: res.data.results },
-        { poster: res.data.results[0] },
-      ]);
+      setTvShows(res.data.results)
+    })
+    .catch(() => (
+      AxiosError
+    ));
+  };
+
+  /**
+  * FUNCTION permettant de récuperer les id des films à l'affiche
+  * @returns  {array} idMovie
+  */
+  const getIdTvShows2 = () => {
+    axios.get('https://api.themoviedb.org/3/tv/popular', {
+      params: {
+        api_key: 'd21d6f9a11307550b8fe09b60f3ee8ef',
+        language: 'fr-FR',
+        iso_3166_1: 'FR',
+        english_name: 'France',
+        page: 2,
+      },
+    })
+    .then((res) => {
+      setTvShows2(res.data.results)
     })
     .catch(() => (
       AxiosError
@@ -34,31 +56,55 @@ const ShowsPopular = () => {
   };
 
   useEffect(() => {
-    getMovies();
-  }, [movies[0].bool]);
+    getIdTvShows();
+    getIdTvShows2();
+  }, []);
 
-  const { poster_path, name, overview } = movies[2].poster;
+  const { width } = useWindowSize();
+  const idTvShows = [];
+  const idTvShows2 = [];
 
+  TvShows.filter((c) => c.overview !== '')
+  .forEach(movie => {
+    idTvShows.push(movie.id)
+  });
+
+  TvShows2.filter((c) => c.overview !== '')
+  .forEach(movie => {
+    idTvShows2.push(movie.id)
+  });
   return (
-    <div className="showsPopular">
-      <h1 className="showsPopular-title-movies">Séries populaires</h1>
-      <div className="showsPopular-poster-container">
-        <img className="showsPopular-poster-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt=""/>
-        <div className="showsPopular-poster-info">
-          <h2 className="showsPopular-poster-title">{name}</h2>
-          <p className="showsPopular-poster-overview">{truncStr(String(overview), 250)}</p>
+    <div className="moviesPoster">
+      <h1 className="moviesPoster-title-movies">Prochainement en salle</h1>
+      <p className="moviesPoster-subtitle-movies">Films à venir au cinéma</p>
+      <hr className="moviesPoster-hr"/>
+      <div className="moviesPoster-container-page">
+        <div className="moviesPoster-movies">
+          {
+            idTvShows.map((v, i) => (
+              width <= 1100 ? (
+                <NavLink key={v} to={`movie/${v}`}>
+                  <CardTvShows id={v} />
+                </NavLink>
+              ) : (
+                <NavLink key={v} to={`movie/${v}`} className="moviesPoster-card-desktop-link">
+                  <CardTvShowsDesktop id={v} />
+                </NavLink>
+              )
+            ))
+          }
         </div>
-      </div>
-      <div className="showsPopular-movies">
+        <div className="moviesPoster-container-page--2">
         {
-          movies[1].movies.filter((c) => c.title !== '' && c.poster_path !== null)
-          .slice(1, 11)
-          .map(({ poster_path, title }, id) => (
-            <div key={id} className="showsPopular-container-movie">
-              <img className="showsPopular-poster" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
-            </div>
+          idTvShows2.map((v, i) => (
+            width >= 1478 ? (
+              <NavLink key={v} to={`movie/${v}`}>
+                <CardTvShows id={v} />
+              </NavLink>
+            ) : ''
           ))
         }
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
-import { formatDate, timeConvert, truncStr } from '../../utils';
-import './MoviesPoster.scss';
+import { formatDate, timeConvert, truncStr } from '../';
+import './Movies.scss';
 
 const CardMoviesDesktop = ({ id }) => {
   const [movie, setMovie] = useState([]);
@@ -61,7 +61,7 @@ const CardMoviesDesktop = ({ id }) => {
 
   return (
     <div className="moviesPoster-card-desktop">
-      <img className="moviesPoster-card-desktop-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt=""/>
+      <img className="moviesPoster-card-desktop-img" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
       <div className="moviesPoster-card-desktop-cont">
         <h2 className="moviesPoster-card-desktop-title">{title}</h2>
         <p className="moviesPoster-card-desktop-info">{formatDate(release_date)} {runtime === 0 ? '' : `| ${timeConvert(runtime)}`} | De {truncStr(String(name), 20)}</p>
@@ -75,7 +75,7 @@ const CardMoviesDesktop = ({ id }) => {
           ))
         }
         </div>
-        <p className="moviesPoster-card-desktop-desc">{overview}</p>
+        <p className="moviesPoster-card-desktop-desc">{truncStr(String(overview), 550)}</p>
       </div>
     </div>
   )

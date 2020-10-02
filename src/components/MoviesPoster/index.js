@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import './MoviesPoster.scss';
 import { NavLink } from 'react-router-dom';
-import CardMovies from '../Home/CardMovies';
-import CardMoviesDesktop from './CardMoviesDesktop';
-import { useWindowSize } from '../../utils';
+import CardMovies from '../../utils/Cards/CardMovies';
+import CardMoviesDesktop from '../../utils/Cards/CardMoviesDesktop';
+import { useWindowSize, truncStr } from '../../utils';
 
-import { truncStr } from '../../utils';
 
 const MoviesPoster = () => {
   const [moviePoster, setMoviePoster] = useState([]);
@@ -50,7 +49,6 @@ const MoviesPoster = () => {
       },
     })
     .then((res) => {
-      console.log(res.data);
       setMovies2(res.data.results)
     })
     .catch(() => (
@@ -76,8 +74,6 @@ const MoviesPoster = () => {
   .forEach(movie => {
     idMovie2.push(movie.id)
   });
-
-  console.log(idMovie2);
 
   return (
     <div className="moviesPoster">

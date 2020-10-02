@@ -1,12 +1,27 @@
 @import '../../styles/vars';
 
-.moviesUpcoming {
+.moviesPoster {
   padding-top: 3rem;
 
   &-title-movies {
     text-align: center;
-    font-size: 2em;
+    font-size: 32px;
     margin: 1.4rem 0;
+    text-transform: uppercase;
+  }
+
+  &-subtitle-movies {
+    text-align: center;
+    color: rgb(196, 196, 196);
+    font-size: 22px;
+  }
+
+  &-hr {
+    width: 47%;
+    margin: 1rem auto 3rem;
+    border: none;
+    height: 1px;
+    background: #C4C4C4;
   }
 
   &-poster {
@@ -15,7 +30,7 @@
     display: block;
     margin: 0 auto;
     border-radius: 10px;
-    
+
     &-container {
       display: flex;
       margin: 0rem auto 2rem;
@@ -84,11 +99,89 @@
   &-titleMovie {
     text-align: center;
   }
+
+  &-card-desktop {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+
+    &-link {
+      // margin-right: auto;
+      width: 80%;
+    }
+
+    &-cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    &-title {
+      color: $color-green;
+      font-size: 22px;
+      text-align: center;
+      margin: .6rem 0;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .05rem;
+    }
+
+    &-img {
+      width: 266px;
+      height: 400px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 5px 0px rgb(196, 196, 196);
+      -moz-box-shadow: 0px 0px 5px 0px rgb(196, 196, 196);
+      box-shadow: 0px 0px 5px 0px rgb(196, 196, 196);
+    }
+
+    &-info {
+      font-size: 14px;
+    }
+
+    &-desc {
+      padding: 1rem 2rem;
+      font-size: 16px;
+      line-height: 1.2rem;
+      letter-spacing: .05rem;
+      text-align: justify;
+      width: 100%;
+    }
+
+    &-actors {
+      margin-left: 5px;
+      font-size: 14px;
+      font-style: italic;
+
+      &--pre {
+        font-size: 14px;
+      }
+
+      &-cont {
+        display: flex;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .home {
+  .moviesPoster {
     padding-top: 0;
     margin-left: 265px;
+
+    &-container-page {
+      display: flex;
+
+      &--2 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid  rgb(196, 196, 196);
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        padding: 0 6rem;
+      }
+    }
   }
 }
