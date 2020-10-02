@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/movierunner/static/css/main.5425f3d8.chunk.css",
-    "main.js": "/movierunner/static/js/main.8c4acf08.chunk.js",
-    "main.js.map": "/movierunner/static/js/main.8c4acf08.chunk.js.map",
+    "main.css": "/movierunner/static/css/main.cb37f426.chunk.css",
+    "main.js": "/movierunner/static/js/main.562c2872.chunk.js",
+    "main.js.map": "/movierunner/static/js/main.562c2872.chunk.js.map",
     "runtime-main.js": "/movierunner/static/js/runtime-main.4192a6f7.js",
     "runtime-main.js.map": "/movierunner/static/js/runtime-main.4192a6f7.js.map",
     "static/js/2.f810c6fe.chunk.js": "/movierunner/static/js/2.f810c6fe.chunk.js",
     "static/js/2.f810c6fe.chunk.js.map": "/movierunner/static/js/2.f810c6fe.chunk.js.map",
     "index.html": "/movierunner/index.html",
-    "precache-manifest.b1149b26b7d4e09b0937926f4bbed997.js": "/movierunner/precache-manifest.b1149b26b7d4e09b0937926f4bbed997.js",
+    "precache-manifest.7fe2bf3ed8c55f72f7aa7bdb42f37b52.js": "/movierunner/precache-manifest.7fe2bf3ed8c55f72f7aa7bdb42f37b52.js",
     "service-worker.js": "/movierunner/service-worker.js",
-    "static/css/main.5425f3d8.chunk.css.map": "/movierunner/static/css/main.5425f3d8.chunk.css.map",
+    "static/css/main.cb37f426.chunk.css.map": "/movierunner/static/css/main.cb37f426.chunk.css.map",
     "static/js/2.f810c6fe.chunk.js.LICENSE.txt": "/movierunner/static/js/2.f810c6fe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4192a6f7.js",
     "static/js/2.f810c6fe.chunk.js",
-    "static/css/main.5425f3d8.chunk.css",
-    "static/js/main.8c4acf08.chunk.js"
+    "static/css/main.cb37f426.chunk.css",
+    "static/js/main.562c2872.chunk.js"
   ]
 }
