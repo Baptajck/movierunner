@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
-import './ShowsPopular.scss';
+import '../../utils/Cards/Movies.scss';
 import { NavLink } from 'react-router-dom';
 import CardTvShows from '../../utils/Cards/CardTvShows';
 import CardTvShowsDesktop from '../../utils/Cards/CardTvShowsDesktop';
@@ -75,8 +75,8 @@ const ShowsPopular = () => {
   });
   return (
     <div className="moviesPoster">
-      <h1 className="moviesPoster-title-movies">Prochainement en salle</h1>
-      <p className="moviesPoster-subtitle-movies">Films à venir au cinéma</p>
+      <h1 className="moviesPoster-title-movies">Séries populaires</h1>
+      <p className="moviesPoster-subtitle-movies">Séries les plus regardées en ce moment</p>
       <hr className="moviesPoster-hr"/>
       <div className="moviesPoster-container-page">
         <div className="moviesPoster-movies">

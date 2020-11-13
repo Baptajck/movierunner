@@ -156,7 +156,7 @@ const Home = () => {
               )
             })
           }
-          <NavLink to="tvshows/popular" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
+          <NavLink to="shows/popular" className="home-cards-link">Voir plus... <IoIosArrowForward /></NavLink>
         </div>
       </section>
 

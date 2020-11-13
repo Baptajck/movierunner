@@ -71,14 +71,17 @@
 
   &-title-movies {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
     margin: 1.4rem 0;
   }
 
   &-subtitle-movies {
     text-align: center;
     color: rgb(196, 196, 196);
-    font-size: 22px;
+    font-size: 18px;
+    font-style: italic;
   }
 
   &-hr {
@@ -171,7 +174,7 @@
     margin-bottom: 2rem;
 
     &-link {
-      // margin-right: auto;
+      margin: auto;
       width: 80%;
     }
 
@@ -211,7 +214,7 @@
       line-height: 1.2rem;
       letter-spacing: .05rem;
       text-align: justify;
-      // width: 750px;
+      // width: 450px;
     }
 
     &-actors {
@@ -263,3 +266,9 @@
     }
   }
 }
+
+// @media screen and (min-width: 1300px) {
+//   .moviesPoster-card-desktop-desc {
+//     width: 550px;
+//   }
+// }

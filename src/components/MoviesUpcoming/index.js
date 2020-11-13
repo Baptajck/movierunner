@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
-import './MoviesUpcoming.scss';
+import '../../utils/Cards/Movies.scss';
 import { NavLink } from 'react-router-dom';
 import CardMovies from '../../utils/Cards/CardMovies';
 import CardMoviesDesktop from '../../utils/Cards/CardMoviesDesktop';

@@ -6,6 +6,7 @@ import { BsPeopleCircle } from 'react-icons/bs'
 import { FaHome, FaSearch } from 'react-icons/fa';
 import { RiMovie2Fill } from 'react-icons/ri';
 import { BiSlideshow } from 'react-icons/bi';
+import { IoMdPerson, IoMdPaper } from 'react-icons/io';
 
 import MenuItem from './MenuItem';
 import LogoSidebar from './LogoSidebar';
@@ -74,62 +75,23 @@ const Sidebar = () => {
               }} 
             />
             <MenuItem
-              title="Films"
-              route=""
-              icon={RiMovie2Fill}
-              active={isActive('/movies')}
-              expanded={isExpanded('/movies')}
-              onClick={() => onMenuItemClicked('/movies', { isCollapsible: true })}
-              subItems={[
-                {
-                  title: 'A l\'affiche',
-                  route: '/movies/poster',
-                  icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
-                  onClick: () => {
-                    toggleClick();
-                    onMenuItemClicked('/movies/poster');
-                  },
-                  active: isActive('/movies/poster')
-                },
-                {
-                  title: 'A venir',
-                  route: '/movies/upcoming',
-                  icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
-                  onClick: () => {
-                    toggleClick();
-                    onMenuItemClicked('/movies/upcoming');
-                  },
-                  active: isActive('/movies/upcoming')
-                },
-              ]}
-            />
-            <MenuItem
-              title="Séries"
-              icon={BiSlideshow}
-              active={isActive('/shows')}
-              expanded={isExpanded('/shows')}
-              onClick={() => onMenuItemClicked('/shows', { isCollapsible: true })}
-              subItems={[
-                {
-                  title: 'Populaires',
-                  route: '/shows/popular',
-                  icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
-                  onClick: () => {
-                    toggleClick();
-                    onMenuItemClicked('/shows/popular');
-                  },
-                  active: isActive('/shows/popular')
-                },
-              ]}
-            />
-            <MenuItem
               title="Développeur"
               route="/developer"
-              icon={BsPeopleCircle}
+              icon={IoMdPaper}
               active={isActive('/developer')}
               onClick={() => {
                 toggleClick();
                 onMenuItemClicked('/developer');
+              }}
+            />
+            <MenuItem
+              title="Se connecter"
+              route="/login"
+              icon={IoMdPerson}
+              active={isActive('/login')}
+              onClick={() => {
+                toggleClick();
+                onMenuItemClicked('/login');
               }}
             />
           </div>
@@ -142,3 +104,56 @@ const Sidebar = () => {
 }
 
 export default Sidebar;
+
+
+{/*
+  <MenuItem
+    title="Films"
+    route=""
+    icon={RiMovie2Fill}
+    active={isActive('/movies')}
+    expanded={isExpanded('/movies')}
+    onClick={() => onMenuItemClicked('/movies', { isCollapsible: true })}
+    subItems={[
+      {
+        title: 'A l\'affiche',
+        route: '/movies/poster',
+        icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
+        onClick: () => {
+          toggleClick();
+          onMenuItemClicked('/movies/poster');
+        },
+        active: isActive('/movies/poster')
+      },
+      {
+        title: 'A venir',
+        route: '/movies/upcoming',
+        icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
+        onClick: () => {
+          toggleClick();
+          onMenuItemClicked('/movies/upcoming');
+        },
+        active: isActive('/movies/upcoming')
+      },
+    ]}
+  />
+  <MenuItem
+    title="Séries"
+    icon={BiSlideshow}
+    active={isActive('/shows')}
+    expanded={isExpanded('/shows')}
+    onClick={() => onMenuItemClicked('/shows', { isCollapsible: true })}
+    subItems={[
+      {
+        title: 'Populaires',
+        route: '/shows/popular',
+        icon: <GiPlayButton width={20} fill={'#DDE2FF'} />,
+        onClick: () => {
+          toggleClick();
+          onMenuItemClicked('/shows/popular');
+        },
+        active: isActive('/shows/popular')
+      },
+    ]}
+  /> 
+*/}

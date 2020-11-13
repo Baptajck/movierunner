@@ -9,23 +9,33 @@ import Sidebar from '../Sidebar';
 import Home from '../Home';
 import Search from '../Search';
 import Developer from '../Developer';
-import MoviesPoster from '../MoviesPoster';
-import MoviesUpcoming from '../MoviesUpcoming';
-import ShowsPopular from '../ShowsPopular';
+import Login from '../Login';
+import Create from '../Create'
+// import MoviesPoster from '../MoviesPoster';
+// import MoviesUpcoming from '../MoviesUpcoming';
+// import ShowsPopular from '../ShowsPopular';
 
 const App = () => {
   return (
     <div>
       <Sidebar />
       <Switch>
-        <Route path="/movies/poster">
-          <MoviesPoster />
+        {/*
+          <Route path="/movies/poster">
+            <MoviesPoster />
+          </Route>
+          <Route path="/movies/upcoming">
+            <MoviesUpcoming />
+          </Route>
+          <Route path="/shows/popular">
+            <ShowsPopular />
+          </Route>
+        */}
+        <Route path="/login">
+          <Login />
         </Route>
-        <Route path="/movies/upcoming">
-          <MoviesUpcoming />
-        </Route>
-        <Route path="/shows/popular">
-          <ShowsPopular />
+        <Route path="/create">
+          <Create />
         </Route>
         <Route path="/search">
           <Search />

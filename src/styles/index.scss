@@ -20,6 +20,7 @@ html[data-theme="dark"]  {
 html[data-theme="light"]  {
   color: rgb(5, 5, 5);
   background-color: rgb(250, 250, 250);
+  // background-color: #eee;
   $boxShadow: 0px 0px 5px 0px rgba(255,255,255,0.75);
   transition: .8s ease;
 }

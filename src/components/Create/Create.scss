@@ -1,0 +1,148 @@
+.create {
+  padding-top: 70px;
+
+  &-title {
+    border-bottom: 1px solid #2ecc71;
+    color: #2ecc71;
+    text-align: center;
+    width: 40%;
+    padding-bottom: 1rem;
+    margin: 1rem auto;
+    text-transform: uppercase;
+  }
+  
+  &-desc {
+    margin: 1rem auto;
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+
+    &-link {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &-error {
+    background-color: pink;
+    text-align: center;
+    padding: 1rem;
+    color: red;
+    width: 200px;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+
+  &-container {
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    &-container {
+      width: 100%;
+      position: relative;
+      padding-top: 1.75em;
+      margin-bottom: 1rem;
+      // border-bottom: 1px solid gray;
+    }
+
+    &-input {
+      position: relative;
+      padding: 1rem;
+      width: 100%;
+      color: orange;
+      border-bottom: 1px solid gray;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: 0;
+      letter-spacing: .1rem;
+      background-color: transparent;
+
+      &:not(output):-moz-ui-invalid {
+        box-shadow: none;
+      }
+      
+      &:not(output):-moz-ui-invalid:-moz-focusring {
+        box-shadow: none;
+      }
+
+      &:focus {
+        ~ .create-form-label {
+          color: orange;
+        }
+        border-bottom: 1px solid orange;
+      }
+
+      &:valid {
+        ~ .create-form-label {
+          color: #2ecc71;
+        }
+        color: #2ecc71;
+        border-bottom: 1px solid #2ecc71;
+      }
+
+      &:invalid:not(:focus):not(:placeholder-shown) {
+        ~ .create-form-label {
+          color: #e74c3c;
+        }
+        color: #e74c3c;
+        border-bottom: 1px solid #e74c3c;
+      }
+    }
+
+    &-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px;
+      padding-top: 20px;
+      padding-bottom: 0;
+      margin: 0;
+      z-index: 1;
+      font-size: .8em;
+      color: gray;
+      font-weight: 400;
+      user-select: none;
+      cursor: text;
+    }
+  }
+
+  &-button {
+    all: unset;
+    display: block;
+    // color: #000;
+    // font-weight: 400;
+    letter-spacing: .05rem;
+    font-style: italic;
+    // background-color: #78cfba;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    text-align: center;
+    cursor: pointer;
+    
+    background-color: transparent;
+    color: #78cfba;
+    border: 1px solid #78cfba;
+
+    &:hover {
+      background-color: #78cfba;
+      color: #fff;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .create {
+    padding-top: 0;
+    margin-left: 265px;
+  }
+}
